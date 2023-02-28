@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset= "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Weekly Schedule</title>
+        <link rel="stylesheet" href="ScheduleStyle.css">
+        <script src="ScheduleScript.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKV_ZWS2vXsELohIbIxE_Liqf0msc0W2U&callback=initMap" async defer></script>
+
+        
+    </head> 
+    <body>
+        <nav id="container">
+            <p><a href="WeeklySchedule.html">My Schedule </a></p>
+            <p><a href="ScheduleForm.html"> Form Input </a></p>
+            <p><a href="aboutMe.html">About Me</a> </p>  
+        </nav>
+
+        <h2>My Weekly Schedule</h2>
+        <div id="imgContainer"></div>
+        <div id="button_div"><button id="imgButton" onClick="toggle()">Go Away</button></div>
+
+        <table id="sch_table">
+            <tr>
+              <th>Day</th>
+              <th>Event</th>
+              <th>Time</th>
+              <th>Event Location</th>
+              <th>Phone Number</th>
+              <th>Information</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>CSCI 4707 Lecture</td>
+                <td>9:45am - 11:00am</td>
+                <td onmouseover="show_image('anderson.jpg',500, 500,'Anderson');">257 19th Avenue S Minneapolis, MN 55455 320</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/4707/">CSCI 4707 Info </a></td>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>Breakfast With Friend</td>
+                <td>11:00am - 12:00pm</td>
+                <td onmouseover="show_image('coffman.jpg',500, 500,'Coffman');">Coffman Memorial Union</td>
+                <td>(612) 625-2037</td>
+                <td><a href="https://locations.einsteinbros.com/us/mn/minneapolis/300-washington-ave-se">BreakFast Spot Info </a></td>
+           </tr>
+           <tr>
+                <td>Monday</td>
+                <td>CSCI 2041 Lecture</td>
+                <td>1:25pm - 2:15pm</td> 
+                <td onmouseover="show_image('bruiniks.jpg',500, 500,'bruiniks');">222 Pleasant St SE, Minneapolis, MN 55455</td> 
+                <td>No Phone Number</td> 
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/2041/">CSCI 2041 Info </a></td>
+           </tr>
+           <tr>
+                <td>Monday</td>
+                <td>CSCI 4061 Lab</td>
+                <td>3:35pm - 4:25pm</td>
+                <td onmouseover="show_image('keller.jpg',500, 500,'keller');">200 Union Street Se
+Minneapolis, MN 55455   1-250</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/4061/">CSCI 4061 Info </a></td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>CSCI 2041 Lab</td>
+                <td>9:05am - 9:55am</td>
+                <td onmouseover="show_image('keller.jpg',500, 500,'keller');">200 Union Street Se
+Minneapolis, MN 55455   1-250</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/2041/">CSCI 2041 Info </a></td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>CSCI 4061 Lecture</td>
+                <td>1:00pm - 2:15pm</td>
+                <td onmouseover="show_image('Tate.jpg',500, 500,'Tate');">Tate Hall 105</td>
+                <td >No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/4061/">CSCI 4061 Info </a></td>
+            </tr>
+            
+            <tr>
+                <td>Tuesday</td>
+                <td>CSCI 4131 Lecture</td>
+                <td>4:00pm - 6:30pm</td>
+                <td onmouseover="show_image('Lind.jpg',500, 500,'Lind');">Lind Hall L125</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/4131/">CSCI 4131 Info</a></td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>CSCI 4707 Lecture</td>
+                <td>9:45am - 11:00am</td>
+                <td onmouseover="show_image('anderson.jpg',500, 500,'Anderson');">257 19th Avenue S
+Minneapolis, MN 55455</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/4707/">CSCI 4707 Info </a></td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>CSCI 2041 Lecture</td>
+                <td>1:25pm - 2:15pm</td>
+                <td onmouseover="show_image('bruiniks.jpg',500, 500,'keller');">222 Pleasant St SE, Minneapolis, MN 55455</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/2041/">CSCI 2041 Info </a></td>
+           </tr>
+           <tr>
+                <td>Wednesday</td>
+                <td>Gym</td>
+                <td>3:30 - 5:00</td>
+                <td onmouseover="show_image('gym.jpg',500, 500,'bruiniks');">1555 Queens Dr, Woodbury, MN 55125</td>
+                <td>(651) 259-6200</td>
+                <td><a href="https://myxperiencefitness.com/">Xperience fitness Info</a></td>
+           </tr>
+           <tr>
+                <td>Thursday</td>
+                <td>CSCI 4061 Lecture</td>
+                <td>1:00pm - 2:15pm</td>
+                <td onmouseover="show_image('Tate.jpg',500, 500,'Tate');">116 Church St SE, Minneapolis, MN 55455</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/4061/">CSCI 4061 Info </a></td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>Lunch with Friends</td>
+                <td>2:30pm - 3:30pm</td>
+                <td onmouseover="show_image('afro.jpg',500, 500,'bruiniks');">720 Washington Ave SE, Minneapolis, MN 55414</td>
+                <td>(612) 871-5555</td>
+                <td><a href="https://www.afrodeli.com/menu">Afro Deli Info</a></td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>CSCI 2041 Lecture</td>
+                <td>1:25pm - 2:15pm</td>
+                <td onmouseover="show_image('bruiniks.jpg',500, 500,'bruiniks');">Bruiniks Hall 220</td>
+                <td>No Phone Number</td>
+                <td><a href="https://schedulebuilder.umn.edu/explore/2023Spring/CSCI/2041/">CSCI 2041 Info </a></td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>BreakFast</td>
+                <td>10:30am - 11:30am</td>
+                <td onmouseover="show_image('breakfast.jpg',500, 500,'bruiniks');">1333 Nicollet Mall, Minneapolis, MN 55403</td>
+                <td>(612) 399-6258</td>
+                <td><a href="https://thenicolletdiner.com/?y_source=1_NTQ5MzcxODUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D">Breakfast Spot Info</a></td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Study Session</td>
+                <td>1:00pm - 4:00pm</td>
+                <td onmouseover="show_image('library.jpg',500, 500,'bruiniks');">8595 Central Park Pl, Woodbury, MN 55125</td>
+                <td>(651) 731-1320</td>
+                <td><a href="https://www.washcolib.org/">Library Info</a></td>
+            </tr>
+
+        </table>
+
+        <div id="map"></div>
+        
+        
+    </body>
+</html>

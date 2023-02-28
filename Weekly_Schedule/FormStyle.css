@@ -1,0 +1,86 @@
+body {
+    
+    background-color: rgb(69, 76, 82);
+   
+}
+
+table {
+    margin-top: 24px;
+    width: auto;
+    background-color: white;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: rgb(255, 253, 253);
+    text-align: left;
+}
+
+label {
+    width: 100px;
+    display: inline-block;
+    text-align: left;
+    padding: 15px;
+    margin-right: 20px;
+ }
+
+ input[type=text]{
+    box-sizing: border-box;
+    margin: 10px 10px;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+ }
+
+ select {
+    box-sizing: border-box;
+    margin: 10px 10px;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+ }
+
+#container {
+    display: flex;
+    border: 1px rgb(255, 255, 255) solid;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgb(17, 17, 83), rgb(153, 27, 82));  
+    padding: 5px;
+    gap: 30px;
+}
+
+#container > p {
+    padding: 10px;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}
+
+a {
+    color: white;
+}
+
+input[type=submit] {
+    position: relative;
+    left: 130px;
+    width: 300px;
+    background-color: #09f;
+    color: white;
+    padding: 15px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+ input[type=submit]:hover {
+    background-color: #07d;
+ }
