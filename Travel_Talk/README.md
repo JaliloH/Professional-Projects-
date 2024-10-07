@@ -33,16 +33,16 @@
 ![Explore Page](/Travel_Talk/screenshots_of_site/explore.png?raw=true "Explore Page")
 Search for places to review using the map or name of the establishment
 
-![Review Place](/screenshots_of_site/review_place.png?raw=true "Review Place")
+![Review Place](/Travel_Talk/screenshots_of_site/review_place.png?raw=true "Review Place")
 After searching, select the desired place to review and see their existing reviews and/or create a new review
 
-![Create Review](/screenshots_of_site/create_review.png?raw=true "Create Review")
+![Create Review](/Travel_Talk/screenshots_of_site/create_review.png?raw=true "Create Review")
 Fill out the form for your review and post it!
 
-![View Reviews](/screenshots_of_site/my_feed.png?raw=true "View Reviews")
+![View Reviews](/Travel_Talk/screenshots_of_site/my_feed.png?raw=true "View Reviews")
 View and search your timeline, sorted by most recent reviews first
 
-![Edit Review](/screenshots_of_site/edit_review.png?raw=true "Edit Review")
+![Edit Review](/Travel_Talk/screenshots_of_site/edit_review.png?raw=true "Edit Review")
 Opinions are always changing! Feel free to revisit and change your reviews
 
 
