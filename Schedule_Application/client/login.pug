@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Login
+    link(rel='stylesheet', type='text/css', href='client/login.css')
+  body
+    #banner
+      h1  Login Page 
+      p Please Enter your Username and Password Below:
+      if message
+        p.message= message
+
+  form(method='post' action='/loginPost')
+    p
+      label(for='username') Username:
+      input(type='text' name='username' required)
+    p
+      label(for='password') Password:
+      input(type='password' name='password' required)
+    p
+      input(type='submit', value='Login')
