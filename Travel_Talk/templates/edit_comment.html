@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+{% block title %}Editing Your Comment{% endblock %}
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="splash">
+    <form id="edit-comment-form" class="pure-form" action="/editComment" method="post">
+        <input type="hidden" name="comment_id" value="{{comment.comment_id}}">
+        <textarea id="edit-text" name="comment-text" maxlength="250">{{comment.comment_text}}</textarea>
+        <input type="submit" id="edit-submit-button" value="Submit Edit">
+    </form>
+</div>
+{% endblock %}

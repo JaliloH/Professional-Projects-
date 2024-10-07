@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% block title %}Editing Your Review{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/create-review.css">
+<link id="stylesheet" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../static/js/create_review.js" defer></script>{% endblock %}   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+
+{% block body %}
+<div class="splash-container" style="overflow: scroll;">
+    <div class="splash" style="margin-top: 2vw;">
+        <h2>Edit your review</h2>
+        <form class="pure-form pure-form-stacked" id="edit-review-form" action="/editReview" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <input type="hidden" name="id" value="{{review.review_id}}">
+                <div class="pure-control-group">
+                    <label for="edit-place-name">Name of Place</label>    <!--going to change this later so it automatically fills in-->
+                    <input type="text" id="edit-place-name" name="edit-place-name" readonly value="{{review.place_reviewed}}">
+                </div>
+                <div class="pure-control-group">
+                    <label for="edit-place-type">Type of Place</label>
+                    <input type="text" id="edit-place-type" name="edit-place-type" readonly value="{{review.place_type}}">
+                </div>
+                <div class="pure-control-group">
+                    <!-- STAR RATING SYSTEM; SOURCE: https://stackoverflow.com/questions/77517679/how-to-make-5-star-rating-with-css -->
+                    <label for="1star5">How would you rate this place?</label>
+                    <div class="rating">
+                        <input type="radio" id="1star5" name="rating" value="5" {% if review.star_count == 5 %}checked{% endif %} />
+                        <label class="full" for="1star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="1star4" name="rating" value="4" {% if review.star_count == 4 %}checked{% endif %} />
+                        <label class="full" for="1star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="1star3" name="rating" value="3" {% if review.star_count == 3 %}checked{% endif %} />
+                        <label class="full" for="1star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="1star2" name="rating" value="2" {% if review.star_count == 2 %}checked{% endif %} />
+                        <label class="full" for="1star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="1star1" name="rating" value="1" {% if review.star_count == 1 %}checked{% endif %} />
+                        <label class="full" for="1star1" title="Sucks big time - 1 star"></label>
+                    </div>
+                </div>
+                <div class="pure-control-group">
+                    <label for="edit-text">Describe your experience</label>
+                    <textarea id="edit-text" name="edit-text" maxlength="500" cols="65" rows="30" required>{{review.review_text}}</textarea>
+                    <!-- <span class="pure-form-message">Max ??? characters</span> -->
+                </div>
+                <input type="submit" id="edit-submit-button" class="pure-button pure-button-primary" value="Submit Edit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

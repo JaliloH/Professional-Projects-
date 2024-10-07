@@ -1,0 +1,55 @@
+{% extends "template.html" %}
+{% block title %}Create Your Review{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/create-review.css">
+<link id="stylesheet" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../static/js/create_review.js" defer></script>{% endblock %}   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="splash" style="margin-top: 6%;">
+    <h2>Create a new review</h2>
+    <form class="pure-form pure-form-stacked" id="create-review-form" action="/createreview" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <!-- <legend>Your Review</legend> -->
+            <input type="hidden" id="place-id" name="place-id" value="{{place_id}}">
+            <div class="pure-control-group">
+                <label for="place-reviewed">Name of Place</label>    <!--going to change this later so it automatically fills in-->
+                <input type="text" id="place-reviewed" name="place-reviewed" readonly value="{{ location_name }}">
+            </div>
+            <div class="pure-control-group">
+                <label for="create-place-type">Type of Place</label>
+                <input type="text" id="create-place-type" name="create-place-type" readonly value="{{ location_type }}">
+            </div>
+                
+            <div class="pure-control-group">
+                <!-- STAR RATING SYSTEM; SOURCE: https://stackoverflow.com/questions/77517679/how-to-make-5-star-rating-with-css -->
+                <label for="1star5">How would you rate this place?</label>
+                <div class="rating">
+                    <input type="radio" id="1star5" name="rating" value="5" />
+                    <label class="full" for="1star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="1star4" name="rating" value="4" />
+                    <label class="full" for="1star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="1star3" name="rating" value="3" />
+                    <label class="full" for="1star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="1star2" name="rating" value="2" />
+                    <label class="full" for="1star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="1star1" name="rating" value="1" checked />
+                    <label class="full" for="1star1" title="Sucks big time - 1 star"></label>
+                </div>
+            </div>
+            <div class="pure-control-group">
+                <label for="review-text">Describe your experience</label>
+                <textarea id="review-text" name="review-text" placeholder="Review text... (max 500 chars)" maxlength="500" cols="65" rows="30" required></textarea>
+                <!-- <span class="pure-form-message">Max ??? characters</span> -->
+            </div>
+            <input type="submit" id="create-submit-button" class="pure-button pure-button-primary">
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

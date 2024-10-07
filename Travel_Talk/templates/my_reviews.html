@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block title %}My Reviews{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/review.css">
+<link id="stylesheet" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../static/js/create_review.js" defer></script>{% endblock %} 
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="content-wrapper"> 
+    <div class="splash">
+        <h1 class="splash-head feed-h1">My Reviews</h1>
+            <div class="all-reviews">
+                {% for review in reviews %}
+                    <a href="/review?id={{review.review_id}}" class="review-redirect">
+                        <div class="review-container">
+                            {% include 'review_template.html'%}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+    </div>
+</div>
+{% endblock %}

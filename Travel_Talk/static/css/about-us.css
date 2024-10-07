@@ -1,0 +1,58 @@
+#about-us-splash {
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#about-us-boxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+#about-us-description,
+#about-us-creators {
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid white;
+    margin-bottom: 100px;
+
+    color: white;
+    background: rgba(53, 53, 53, 0.434);
+}
+
+#about-us-description {
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+#intro {
+    line-height: 1.3;
+}
+
+#desc {
+    text-transform: none;
+    line-height: 3;
+    font-size: 18px;
+}
+
+#ty {
+    position: absolute;
+    bottom: 0;
+}
+
+#about-us-creators {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us-imgs {
+    width: 100px;
+    height: 100px;
+}

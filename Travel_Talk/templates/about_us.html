@@ -1,0 +1,47 @@
+{% extends "template.html" %}
+{% block title %}About Us{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/about-us.css">
+{% endblock %}
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div id="about-us-splash">
+    <div id="about-us-boxes">
+        <div id="about-us-description">
+            <div id="intro">
+                <h1>What's better than going on a trip?</h1>
+                <h1>Watching someone else go on a trip!</hr>
+            </div>
+            <div id="desc">
+                You save yourself the headache of planning, budgeting, kids kicking your seat on the plane, and much more.
+                Our goal is to form a community of adventurers who interact with each other by sharing and discussing the places they visit.
+                We hope to foster friendly and engaging conversations by allowing users to post and comment on reviews of destinations.
+                We hope that you are able to live vicariously through the travelers that share their thoughts!
+            </div>
+
+            <h1 id="ty">Thank you for using our site!</h1>
+        </div>
+
+        <div id="about-us-creators">
+            <h1>Meet the developers</h1>
+            <img alt="jalilo" class="pure-img-responsive about-us-imgs" src="../static/img/jalilo.jpeg">
+            Abdou-Aljalil Hammida
+    
+            <img alt="amanda" class="pure-img-responsive about-us-imgs" src="../static/img/amanda.jpeg">
+            Amanda Hertzel
+    
+            <img alt="yousef" class="pure-img-responsive about-us-imgs" src="../static/img/yousef.jpeg">
+            Yousef Mahayni
+    
+            <img alt="allen" class="pure-img-responsive about-us-imgs" src="../static/img/allen.jpeg">
+            Allen Nhan
+        </div>
+    </div>
+</div>
+{% endblock %} 

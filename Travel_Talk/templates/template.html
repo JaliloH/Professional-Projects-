@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link id="stylesheet" rel="stylesheet" type="text/css" href="../static/css/main.css">
+        <link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/menu-dropdown.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous"> -->
+        <script src="../static/js/account.js" defer></script>
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="home-menu pure-menu-horizontal pure-menu-fixed">
+                <div class="pure-menu-heading">Travel Talk</div>
+                <!-- do we want to make our own in case copyright stuff.... shouldn't be that big of issue tho -->
+                <img alt="Logo" class="pure-img-responsive" id="menu-logo" src="../static/img/logo.png">
+        
+                <ul class="pure-menu-list">
+                    {% block navlist %} 
+                    <!-- insert the class tag "pure-menu-selected" for the selected one
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+                    <li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+                    <li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+                    -->
+                    {% endblock %}
+                    <li class="pure-menu-item">
+                        <div id="menu-account">
+                            <a id="login" href="/login" class="pure-menu-link">Log In</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="splash-container">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        <div class="footer l-box">
+            <ul class="pure-menu-list home-menu pure-menu-horizontal" id="footer-list">
+                <li class="pure-menu-item pure-menu-link"><a id="about-us" class="footer-item" href="/aboutus">About Us</a></li>
+                <li class="pure-menu-item pure-menu-link" id="contact-us">Anything you want to tell us? <a class="footer-item" href="mailto:ajay.csci5117@gmail.com">Email us!</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

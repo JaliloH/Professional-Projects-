@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+{% block title %}Review{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/review.css">
+<link id="stylesheet" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../static/js/edit_comment.js" defer></script>{% endblock %} 
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+    <div class="splash" style="position:relative; margin-top:8%;">
+        {% for review in reviews %}
+            <div class="review-container">
+                {% include 'review_template.html'%}
+                <div class="review-buttons">
+                    {% if user_owns_review %}
+                        <form id="edit-review-form" action="{{url_for('editReview',id=review.review_id)}}" method="get">
+                            <input type="hidden" name="id" value="{{review.review_id}}">
+                            <button type="submit" class="pure-button edit">Edit</button>
+                        </form>
+                        <form id="delete-review-form" action="{{url_for('deleteReview', id=review.review_id)}}" method="post">
+                            <input type="hidden" name="id" value="{{review.review_id}}">
+                            <button type="submit" class="pure-button delete">Delete</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        
+            <div class="comment-container">
+                <h3>Comments</h3>
+                {% if is_user_logged_in %}
+                    <form action="{{url_for('postComment', id=review.review_id)}}" method="post">
+                        <input type="hidden" name="id" value="{{review.review_id}}">
+                        <textarea id="comment-text" name="comment-text" placeholder="Add a comment..." rows="4" cols="50"></textarea>
+                        <button type="submit" class="pure-button">Post Comment</button>
+                    </form>
+                {% endif %}
+                <br>
+                {% for comment in comments %}
+                    <div class="comments">
+                        {% include 'comment.html' %}
+                    </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block title %}Edit Your Profile{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/profile.css">
+<script src="../static/js/edit_profile.js" defer></script>
+{% endblock %}
+
+{% block navlist %}
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div id="profile">
+    <h1>view your profile</h1>
+
+    <div id="profile-forms">
+        <!-- <form id="pfp" class="profile-item" action="/api/updateavatar" method="post" enctype="multipart/form-data"> -->
+        <div id="pfp" class="profile-item">
+            profile picture<br>
+            <div id="profile-pfp-update">
+                <img id="profile-pfp" alt="avatar" class="pure-img-responsive" src="{{ avatar }}">
+            </div>
+        </div>
+        <!-- </form> -->
+    
+        <form id="usr" class="profile-item" action="/api/updateusername" method="post">
+            username<br>
+            <div id="profile-username">
+                {{ username }}
+            </div>
+            <div id="profile-edit">
+                Click on your username to edit it
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

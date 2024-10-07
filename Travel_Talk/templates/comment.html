@@ -1,0 +1,26 @@
+    <div class="review-subheader-container">
+        <h4>{{ comment.username }}</h4>
+        <h4>{{ comment.time_posted.strftime('%m-%d %H:%M %p') }}</h4>
+    </div>
+    {% if not comment.sub == current_user_sub %}
+        <div>
+            {{comment.comment_text}}
+        </div>
+    {%endif%}
+
+{% if is_user_logged_in and comment.sub == current_user_sub %}
+    <div id="comment-buttons">
+        <div id="edit-comment-form">
+            <form class="pure-form" action="{{url_for('editComment', comment_id=comment.comment_id)}}" method="post">
+                <input type="hidden" name="comment_id" value="{{comment.comment_id}}">
+                <div id="comment-abc">
+                    {{comment.comment_text}}
+                </div>
+            </form>
+        </div>        
+        <form id="delete" action="{{url_for('deleteComment', comment_id=comment.comment_id)}}" method="post">
+            <input type="hidden" name="comment_id" value="{{comment.comment_id}}">
+            <button type="submit" class="pure-button delete">Delete</button>
+        </form>
+    </div>
+{% endif %}

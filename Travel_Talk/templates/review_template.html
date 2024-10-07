@@ -1,0 +1,26 @@
+<div class="review-header-container">
+    <h1>{{ review.place_reviewed }}</h1>
+    <h3 style="font-style:italic;">{{ review.place_type }}</h3>
+    <div class="review-subheader-container">
+        <h4 class="review-author">{{review.username}}</h4>
+        <h4 class="review-time">{{review.time_posted.strftime('%m-%d %H:%M %p')}}</h4>
+    </div>
+</div>
+<p class="review-text">{{review.review_text}}</p>
+<div class="pure-control-group">
+    <!-- STAR RATING SYSTEM; SOURCE: https://stackoverflow.com/questions/77517679/how-to-make-5-star-rating-with-css -->
+    <div class="rating" disabled>
+        <input type="radio" id="1star5" name="rating" value="5"  {% if review.star_count == 5 %}checked{% endif %} />
+        <label class="full {% if review.star_count == 5 %}gold{% endif %}" for="1star5" title="Awesome - 5 stars"></label>
+        <input type="radio" id="1star4" name="rating" value="4"  {% if review.star_count == 4 %}checked{% endif %} />
+        <label class="full {% if review.star_count >= 4 %}gold{% endif %}" for="1star4" title="Pretty good - 4 stars"></label>
+        <input type="radio" id="1star3" name="rating" value="3"  {% if review.star_count == 3 %}checked{% endif %} />
+        <label class="full {% if review.star_count >= 3 %}gold{% endif %}" for="1star3" title="Meh - 3 stars"></label>
+        <input type="radio" id="1star2" name="rating" value="2"  {% if review.star_count == 2 %}checked{% endif %} />
+        <label class="full {% if review.star_count >= 2 %}gold{% endif %}" for="1star2" title="Kinda bad - 2 stars"></label>
+        <input type="radio" id="1star1" name="rating" value="1"  {% if review.star_count == 1 %}checked{% endif %} />
+        <label class="full {% if review.star_count >= 1 %}gold{% endif %}" for="1star1" title="Sucks big time - 1 star"></label>
+    </div>
+</div>
+<img></img>
+

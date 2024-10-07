@@ -1,0 +1,87 @@
+#profile {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 20%;
+    right: 0;
+    text-transform: uppercase;
+    color: black;
+}
+
+#pfp, #usr {
+    width: 40%;
+    height: 60%;
+    top: 35%;
+    background-color: #c3c3c37b;
+    /* background: radial-gradient(#a2b5b5, #c5d1d1); */
+    /* 4d5d5d */
+    position: absolute;
+}
+
+#pfp {
+    left: 0;
+}
+
+#usr {
+    right: 0;
+}
+
+.profile-item {
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-style: double;
+    border-color: #97acac;
+    font-size: 19px;
+}
+
+#profile-pfp {
+    cursor: normal;
+}
+
+#profile-username {
+    cursor: pointer;
+    word-wrap: break-word;
+    margin-top: 15px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+}
+
+#profile-edit {
+    display: none;
+}
+
+#usr:hover #profile-edit {
+    display: block;
+
+    font-size: 13px;
+}
+
+#profile-pfp-update {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    overflow: auto;
+}
+
+#profile-pfp, #img {
+    margin-right: 10%;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent white background */
+}
+
+.profile-button {
+    background-color:#343d42;
+    color:white;
+    padding: 0.5em 2em; 
+    border-radius: 5px;
+}

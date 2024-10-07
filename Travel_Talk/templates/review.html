@@ -1,0 +1,37 @@
+{% extends "template.html" %}
+{% block title %}Review{% endblock %}
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+    <!-- Review itself -->
+    <div class="splash" style="position:relative; margin-top:3vw;">
+        <div class="review-container">
+            <div class="review-header-container">
+                <h1>{{ review.place_reviewed }}</h1>
+                <h3 style="font-style:italic;">{{ review.place_type }}</h3>
+                <div class="review-subheader-container">
+                    <h4>{{ review.username }}</h4>
+                    <h4>{{ review.time_posted }}</h4>
+                </div>
+            </div>
+            <p>{{ review.review_text }}</p>
+            <p>star     star    star: {{review.star_count}}</p>
+            <img src=""></img>
+            <button class="pure-button" id="edit_post" style="margin-left:75%;">Edit</button>
+        </div>
+
+        <div class="comment-container">
+            <div class="review-subheader-container">
+                <h4>Commentor</h4>
+                <h4>Time</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. In nisl nisi scelerisque eu ultrices vitae auctor eu. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Vulputate dignissim suspendisse in est. Consectetur purus ut faucibus pulvinar elementum integer enim.</p>
+            <button class="pure-button" style="margin-left:75%; color:#2d3e50; background-color:white;">Edit</button>
+        </div>
+    </div>
+{% endblock %}

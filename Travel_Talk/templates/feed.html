@@ -1,0 +1,57 @@
+{% extends "template.html" %}
+{% block title %}My Feed{% endblock %}
+{% block head %}
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/review.css">
+<link id="stylesheet" rel ="stylesheet" type="text/css" href="../static/css/feed.css">
+<link id="stylesheet" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../static/js/create_review.js" defer></script>
+<script src="../static/js/feed.js" defer></script>
+{% endblock %} 
+
+{% block navlist %} 
+<li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+<li class="pure-menu-item pure-menu-selected"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+<li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="content-wrapper"> 
+    <div class="splash">
+        <h1 class="splash-head feed-h1">My Feed</h1>
+
+        <!-- SOURCE: https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
+        <div class="search-filter" onmouseover="showList()" onmouseout="hideList()">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter Browse">
+                <ul id="myUL" hidden="true" onmouseenter="enterList()" onmouseleave="leaveList()">
+                    <li><a href="/feed/bars">Bars</a></li>
+                    <li><a href="/feed/beauty">Beauty</a></li>
+                    <li><a href="/feed/cafes">Cafés</a></li>
+                    <li><a href="/feed/edible">Food/drink</a></li>
+                    <li><a href="/feed/restaurants">Restaurants</a></li>
+                    <li><a href="/feed/stores">Stores</a></li>
+                    <li><a href="/feed/moststars">Order by most stars first</a></li>
+                    <li><a href="/feed/leaststars">Order by least stars first</a></li>
+                    <li><a href="/feed/fivestars">Five-star reviws</a></li>
+                    <li><a href="/feed/fourstars">Four-star reviws</a></li>
+                    <li><a href="/feed/threestars">Three-star reviews</a></li>
+                    <li><a href="/feed/twostars">Two-star reviews</a></li>
+                    <li><a href="/feed/onestar">One-star reviews</a></li>
+                </ul>
+        </div>
+
+        <div class="all-reviews">
+            {% for review in reviews %}
+                <a href="/review?id={{review.review_id}}" class="review-redirect">
+                    <div class="review-container">
+                        {% include 'review_template.html' %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+<!-- We will want to not put in comments here-->
+<!--Here we will use jinja2 to call the database and get the recent reviews-->
+    </div>
+</div>
+
+
+{% endblock %}

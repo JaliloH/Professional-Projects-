@@ -1,0 +1,32 @@
+<div class="splash-container overflow">
+    <div class="content-wrapper"> 
+        <div class="content">
+            <div class="pure-g"> 
+                <div class="pure-u-1-4"></div>
+                <div class="pure-u-1-4 is-center">
+                    <img src="{{ location_photo }}" alt="Image reference" width="300" height="300">
+                </div>
+                <div class="pure-u-1-4 is-center">
+                    <h3 class="search_results_text">{{ location_name }} </h3>
+                    <br>
+                    <a href="/createreview/{{ location_name }},{{ location_type }},{{ location_id }}" class="pure-button pure-button-primary">Create Review</a>
+                </div>
+                <div class="pure-u-1-4"></div>
+                {% for review in reviews %}
+                    <div class="pure-u-1-4"></div>
+
+                    <div class="pure-u-1-2 is-center all-reviews">
+                        <a href="/review?id={{review.review_id}}" class="review-redirect">
+                            <div class="review-container">
+                                {% include 'review_template.html'%}
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pure-u-1-4"></div>
+                {% endfor %}
+            <div>
+        </div>
+    </div>
+</div>
+
+

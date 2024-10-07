@@ -1,0 +1,120 @@
+.pure-form {
+    justify-content:center;
+}
+
+.pure-form fieldset {
+    /* background-color: #dcdcdc; */
+    background-color: #c5d1d1;
+    /* background-color: #dff5ff; */
+    padding: 2vw;
+    /* border-color: #49a9dd; */
+    /* border-color: #657c6d; */
+    border-color: #9ec0aa;
+    border-width: 3vw;
+}
+
+/* legend { */
+    /* background-color: #95b599; */
+    /* background-color: #c5d1d1; */
+    /* background-color: white; */
+    /* color: #c5d1d1; */
+    /* color:black; */
+    /* padding: 1vw; */
+    /* background-color: #343d42; */
+    /* text-transform: none; */
+    /* font-weight: bold; */
+    /* border-style: solid; */
+    /* border-top-color: #23526d; */
+    /* border-bottom-color: #49a9dd; */
+    /* border-inline-style: none; */
+/* } */
+
+.pure-control-group, .pure-controls {
+    display: flex;
+    flex-direction: column;
+    text-transform: none;
+    align-items:self-start;
+    
+}
+
+.pure-control-group input[type="text"] {
+    max-width: 15vw;
+}
+
+.pure-control-group textarea {
+    max-height: 20vw;
+    max-width: 40vw;
+    resize: none;
+    padding: 1vw;
+}
+
+.pure-form input[type="submit"] {
+    margin: 1vw;
+}
+
+/* STAR RATING SYSTEM; SOURCE: https://stackoverflow.com/questions/77517679/how-to-make-5-star-rating-with-css */
+
+.rating {
+  border: none;
+  float: left;
+  
+}
+
+.rating>input {
+  display: none;
+}
+
+.rating>label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "★";
+}
+
+.rating>.half:before {
+  content: "★";
+  position: absolute;
+}
+
+.rating>label {
+  color: #ddd;
+  float: right;
+}
+
+.rating > input:checked ~ label {
+    color: gold; 
+  }
+.gold {
+    color: gold !important;
+}
+.rating>label {
+    color: #ddd;
+    float: right;
+  }
+
+  #comment-text {
+    resize:none;
+    width:100;
+  }
+  .review-buttons form {
+    display: inline-block;
+    margin-right: 10px; 
+}
+
+.review-buttons form:last-child {
+    margin-right: 0;
+}
+#comment-buttons form, button.edit-comment {
+  display: inline-block;
+  /* margin-right: 1;  */
+}
+
+#comment-buttons form#delete {
+  margin-left:75%
+}
+.comments {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block title %}Error{% endblock %}
+
+{% block navlist %} 
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Explore</a></li>
+                <li class="pure-menu-item"><a href="/feed" class="pure-menu-link">My Feed</a></li>
+                <li class="pure-menu-item"><a href="/myReviews" class="pure-menu-link">My Reviews</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="splash">
+    <h1 class="splash-head">{{error}}</h1>
+    <a href="{{url_for("mainpage")}}"><p>Click here</a> to get back to the main page</p>
+</div>
+{% endblock %}
