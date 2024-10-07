@@ -30,31 +30,25 @@
 
 ## Screenshots of Site
 
-![Explore Page](Travel_Talk/screenshots_of_site/explore.png?raw=true "Explore Page")
+![Explore Page](/screenshots_of_site/explore.png?raw=true "Explore Page")
 Search for places to review using the map or name of the establishment
 
-![Review Place](Travel_Talk/screenshots_of_site/review_place.png?raw=true "Review Place")
+![Review Place](/screenshots_of_site/review_place.png?raw=true "Review Place")
 After searching, select the desired place to review and see their existing reviews and/or create a new review
 
-![Create Review](Travel_Talk/screenshots_of_site/create_review.png?raw=true "Create Review")
+![Create Review](/screenshots_of_site/create_review.png?raw=true "Create Review")
 Fill out the form for your review and post it!
 
-![View Reviews](Travel_Talk/screenshots_of_site/my_feed.png?raw=true "View Reviews")
+![View Reviews](/screenshots_of_site/my_feed.png?raw=true "View Reviews")
 View and search your timeline, sorted by most recent reviews first
 
-![Edit Review](Travel_Talk/screenshots_of_site/edit_review.png?raw=true "Edit Review")
+![Edit Review](/screenshots_of_site/edit_review.png?raw=true "Edit Review")
 Opinions are always changing! Feel free to revisit and change your reviews
 
 
 ## Mock-up 
 
 Mock up Figma link: https://www.figma.com/file/MTItI6uf5faR4aoSzcrdtC/Travel-Talk?type=design&node-id=0%3A1&mode=design&t=yBZT7i1ivZB0VfPK-1
-
-
-## External Dependencies
-
-* Library or service name: description of use
-* ...
 
 **Other Documentation**
 - [Used W3 Schools for creating the dropdown menu](https://www.w3schools.com/howto/howto_css_dropdown.asp)
