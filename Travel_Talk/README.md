@@ -5,7 +5,7 @@
 * App Name: Travel Talk
 * App Link: https://travel-talk.onrender.com/
 
-### Students
+### Team Members
 
 * Abdou-Aljalil Hammida, hammi110@umn.edu
 * Amanda Hertzel, hertz109@umn.edu
