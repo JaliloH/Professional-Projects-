@@ -30,7 +30,7 @@
 
 ## Screenshots of Site
 
-![Explore Page](/screenshots_of_site/explore.png?raw=true "Explore Page")
+![Explore Page](/Travel_Talk/screenshots_of_site/explore.png?raw=true "Explore Page")
 Search for places to review using the map or name of the establishment
 
 ![Review Place](/screenshots_of_site/review_place.png?raw=true "Review Place")
